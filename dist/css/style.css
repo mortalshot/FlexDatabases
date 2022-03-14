@@ -523,29 +523,20 @@ body::after {
   transition: transform 0.3s ease 0s;
   background-color: #f07d00;
   color: #fff;
+  padding-top: 2.5rem;
   width: 100%;
   max-width: 37.375rem;
   border-radius: 20px;
   position: relative;
 }
-@supports (padding-top: clamp( 1.5rem , 1.1659707724rem  +  1.6701461378vw , 2.5rem )) {
+@supports (padding-bottom: clamp( 2rem , 1.4154488518rem  +  2.9227557411vw , 3.75rem )) {
   .popup__content {
-    padding-top: clamp( 1.5rem , 1.1659707724rem  +  1.6701461378vw , 2.5rem );
+    padding-bottom: clamp( 2rem , 1.4154488518rem  +  2.9227557411vw , 3.75rem );
   }
 }
-@supports not (padding-top: clamp( 1.5rem , 1.1659707724rem  +  1.6701461378vw , 2.5rem )) {
+@supports not (padding-bottom: clamp( 2rem , 1.4154488518rem  +  2.9227557411vw , 3.75rem )) {
   .popup__content {
-    padding-top: calc(1.5rem + 1 * (100vw - 20rem) / 59.875);
-  }
-}
-@supports (padding-bottom: clamp( 1.5rem , 0.748434238rem  +  3.75782881vw , 3.75rem )) {
-  .popup__content {
-    padding-bottom: clamp( 1.5rem , 0.748434238rem  +  3.75782881vw , 3.75rem );
-  }
-}
-@supports not (padding-bottom: clamp( 1.5rem , 0.748434238rem  +  3.75782881vw , 3.75rem )) {
-  .popup__content {
-    padding-bottom: calc(1.5rem + 2.25 * (100vw - 20rem) / 59.875);
+    padding-bottom: calc(2rem + 1.75 * (100vw - 20rem) / 59.875);
   }
 }
 @supports (padding-left: clamp( 0.9375rem , -0.419493737rem  +  6.7849686848vw , 5rem )) {
@@ -574,13 +565,29 @@ body::after {
 .popup__close {
   position: absolute;
   right: 0;
-  top: -1rem;
-  transform: translateY(-100%);
+  top: 0.5rem;
+  right: 0.5rem;
   background-color: transparent;
   font-size: 2rem;
   color: #fff;
   border-radius: 50%;
   transition: 0.3s ease transform, 0.3s opacity 0s;
+}
+@media (min-width: 47.99875em) {
+  .popup__close {
+    transform: translateY(-100%);
+    right: 0;
+  }
+  @supports (top: clamp( -1rem , -0.3329853862rem  +  -0.8350730689vw , -0.5rem )) {
+    .popup__close {
+      top: clamp( -1rem , -0.3329853862rem  +  -0.8350730689vw , -0.5rem );
+    }
+  }
+  @supports not (top: clamp( -1rem , -0.3329853862rem  +  -0.8350730689vw , -0.5rem )) {
+    .popup__close {
+      top: calc(-0.5rem + -0.5 * (100vw - 20rem) / 59.875);
+    }
+  }
 }
 .popup__close:focus {
   outline: 0;
@@ -610,6 +617,20 @@ body::after {
 .popup_video .popup__content {
   padding: 0;
   max-width: 56.25rem;
+}
+.popup_video .popup__close {
+  transform: translateY(-100%);
+  right: 0;
+}
+@supports (top: clamp( -1rem , -0.3329853862rem  +  -0.8350730689vw , -0.5rem )) {
+  .popup_video .popup__close {
+    top: clamp( -1rem , -0.3329853862rem  +  -0.8350730689vw , -0.5rem );
+  }
+}
+@supports not (top: clamp( -1rem , -0.3329853862rem  +  -0.8350730689vw , -0.5rem )) {
+  .popup_video .popup__close {
+    top: calc(-0.5rem + -0.5 * (100vw - 20rem) / 59.875);
+  }
 }
 
 .request__form .form__btn {
