@@ -1,0 +1,496 @@
+//header ====================================================================================================
+.header {
+	background-color: $White;
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	&._header-scroll {
+		box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+
+		.header__container {
+			padding-top: rem(15);
+			padding-bottom: rem(15);
+		}
+	}
+
+	// .header__container
+	&__container {
+		@include adaptiveValue("padding-top", 36, 24, 1440, 700, 1);
+		@include adaptiveValue("padding-bottom", 36, 24, 1440, 700, 1);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		transition: $transition ease all 0s;
+
+		@media (min-width: $tablet) {
+			& > * {
+				&:not(:last-child) {
+					margin-right: rem(10);
+				}
+			}
+		}
+	}
+
+	&__logo,
+	&__button {
+		flex: 0 1 50%;
+	}
+
+	// .header__logo
+	&__logo {
+		z-index: 5;
+		position: relative;
+		font-size: rem(41);
+		@include adaptiveValue("font-size", 41, 32, 1440, 992, 1);
+
+		.logo__link {
+			display: inline-flex;
+			color: $Orange;
+
+			@media (any-hover: hover) {
+				transition: $transition ease color 0s;
+
+				&:hover {
+					color: $mainColor;
+				}
+			}
+		}
+	}
+
+	// .header__body
+	&__body {
+		@media (min-width: $tablet) {
+			flex: 1 0 66%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		@media (max-width: $tablet) {
+			position: fixed;
+			z-index: 2;
+			top: -150%;
+			left: 0;
+			right: 0;
+			background: $White;
+			height: 100%;
+			min-height: 100vh;
+			overflow-y: auto;
+			@include adaptiveValue("padding-top", 121, 106);
+			padding-bottom: rem(40);
+			padding-left: rem(20);
+			padding-right: rem(20);
+			display: grid;
+			row-gap: rem(24);
+			align-items: flex-start;
+			align-content: flex-start;
+			transition: 0.5s ease top 0s;
+
+			&::before {
+				content: "";
+				background: $White;
+				@include adaptiveValue("height", 91, 76);
+				position: fixed;
+				z-index: 2;
+				top: -150%;
+				left: 0;
+				right: 0;
+				transition: 0.5s ease top 0s;
+			}
+
+			.menu-open & {
+				top: 0;
+
+				&::before {
+					top: 0;
+				}
+			}
+		}
+	}
+
+	// .header__menu
+	&__menu {
+		@media (min-width: $tablet) {
+			&:not(:last-child) {
+				margin-right: rem(24);
+			}
+		}
+
+		.menu {
+			// .menu__list
+			&__list {
+				@media (min-width: $tablet) {
+					display: flex;
+					align-items: center;
+					flex-wrap: wrap;
+					margin: rem(-12);
+					@include adaptiveValue("margin-left", -12, -8, 1440, 992, 1);
+					@include adaptiveValue("margin-right", -12, -8, 1440, 992, 1);
+				}
+			}
+
+			// .menu__item
+			&__item {
+				@media (min-width: $tablet) {
+					position: relative;
+					padding: rem(12);
+					@include adaptiveValue("padding-left", 12, 8, 1440, 992, 1);
+					@include adaptiveValue("padding-right", 12, 8, 1440, 992, 1);
+					font-weight: 500;
+					@include adaptiveValue("font-size", 16, 15, 1440, 992, 1);
+					line-height: math.div(19, 16);
+
+					@media (any-hover: hover) {
+						&:hover {
+							.menu__sub-list {
+								opacity: 1;
+								pointer-events: all;
+								visibility: visible;
+							}
+
+							.menu__arrow {
+								transform: translate(-50%, 100%) rotate(180deg);
+							}
+						}
+					}
+
+					&._hover {
+						.menu__sub-list {
+							opacity: 1;
+							pointer-events: all;
+							visibility: visible;
+						}
+					}
+				}
+				@media (max-width: $tablet) {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: space-between;
+					@include adaptiveValue("font-size", 28, 18);
+					font-size: rem(28);
+					line-height: math.div(43, 36);
+					padding-bottom: rem(16);
+					margin-bottom: rem(16);
+					border-bottom: 1px solid $Gray;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			// .menu__link
+			&__link {
+				@media (any-hover: hover) {
+					transition: $transition ease color 0s;
+
+					&:hover {
+						color: $Orange;
+					}
+				}
+			}
+		}
+	}
+
+	// .header__language
+	&__language {
+	}
+
+	// .header__social
+	&__social {
+		@media (min-width: $tablet) {
+			display: none;
+		}
+		@media (max-width: $tablet) {
+			justify-content: center;
+
+			.social {
+				// .social__item
+				&__item {
+					@include adaptiveValue("font-size", 28, 24);
+					color: rgba($color: $mainColor, $alpha: 0.6);
+				}
+			}
+		}
+	}
+
+	// .header__search
+	&__search {
+		@media (min-width: $tablet) {
+			display: none;
+		}
+		@media (max-width: $tablet) {
+			position: relative;
+
+			.search-form {
+				// .search-form__input
+				&__input {
+					width: 100%;
+					padding: rem(18);
+					@include adaptiveValue("font-size", 18, 16);
+					@include adaptiveValue("padding-right", 56, 46);
+					background: #f0f5fa;
+				}
+				// .search-form__submit
+				&__submit {
+					position: absolute;
+					right: rem(18);
+					top: 50%;
+					transform: translateY(-50%);
+					@include adaptiveValue("font-size", 28, 18);
+				}
+			}
+		}
+	}
+
+	// .header__button
+	&__button {
+		display: flex;
+
+		@media (min-width: $tablet) {
+			justify-content: flex-end;
+		}
+		@media (max-width: $tablet) {
+			justify-content: center;
+
+			a,
+			button {
+				@include adaptiveValue("min-width", 384, 280);
+				@include adaptiveValue("font-size", 18, 16);
+			}
+		}
+		@media (max-width: $mobileM) {
+			a,
+			button {
+				width: 100%;
+			}
+		}
+	}
+
+	// header__right
+	&__right {
+		@media (min-width: $tablet) {
+			display: none;
+		}
+		@media (max-width: $tablet) {
+			display: flex;
+			align-items: center;
+
+			& > * {
+				&:not(:last-child) {
+					margin-right: rem(32);
+				}
+			}
+		}
+	}
+}
+
+.menu {
+	// .menu__body
+	&__body {
+	}
+
+	// .menu__list
+	&__list {
+	}
+
+	// .menu__item
+	&__item {
+	}
+
+	// .menu__link
+	&__link {
+	}
+
+	// .menu__arrow
+	&__arrow {
+		@media (min-width: $tablet) {
+			display: block;
+			padding: rem(5);
+			margin: rem(-5);
+			position: absolute;
+			left: 50%;
+			bottom: rem(18);
+			transform: translate(-50%, 100%);
+			font-size: rem(6);
+			color: rgba($color: $mainColor, $alpha: 0.4);
+			transition: $transition ease transform 0s;
+		}
+		@media (max-width: $tablet) {
+			padding: rem(10);
+			margin: rem(-10);
+			@include adaptiveValue("font-size", 16, 14);
+			color: $Gray;
+			transition: $transition ease transform 0s;
+
+			&::before {
+				content: "\e919";
+			}
+
+			&._spoller-active {
+				transform: rotate(180deg);
+
+				&::before {
+					content: "\e901";
+					font-size: rem(4);
+				}
+			}
+		}
+	}
+
+	// .menu__sub-list
+	&__sub-list {
+		@media (min-width: $tablet) {
+			min-width: rem(124);
+			box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+			border-radius: rem(16);
+			background-color: $White;
+			z-index: 2;
+			padding: rem(20) rem(16);
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			transform: translate(-50%, 100%);
+			text-align: center;
+			opacity: 0;
+			pointer-events: none;
+			visibility: hidden;
+			transition: $transition ease all 0s;
+		}
+		@media (max-width: $tablet) {
+			margin-top: rem(16);
+			flex: 0 0 100%;
+			@include adaptiveValue("font-size", 18, 16);
+			line-height: math.div(39, 28);
+			padding-left: rem(24);
+		}
+	}
+
+	// .menu__sub-item
+	&__sub-item {
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+		}
+
+		@media (max-width: $tablet) {
+			&:not(:last-child) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+
+	// .menu__sub-link
+	&__sub-link {
+		@media (any-hover: hover) {
+			transition: $transition ease color 0s;
+
+			&:hover {
+				color: $Orange;
+			}
+		}
+	}
+}
+
+.language {
+	// .language__list
+	&__list {
+	}
+
+	// .language__item
+	&__item {
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(19, 16);
+		display: none;
+
+		@media (min-width: $tablet) {
+			@include adaptiveValue("font-size", 16, 14, 1440, 992, 1);
+		}
+
+		&.current-language-menu-item {
+			display: block;
+		}
+
+		a {
+			@media (any-hover: hover) {
+				transition: $transition ease color 0s;
+
+				&:hover {
+					color: $Orange;
+				}
+			}
+		}
+	}
+}
+
+//Burger ====================================================================================================
+.icon-menu {
+	display: none;
+
+	@media (max-width: $tablet) {
+		display: block;
+		position: relative;
+		@include adaptiveValue("width", 40, 30);
+		@include adaptiveValue("height", 28, 20);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 70%;
+			height: rem(4);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			width: 100%;
+			top: calc(50% - rem(2));
+		}
+
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before {
+				top: calc(50% - rem(2));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(2));
+				transform: rotate(45deg);
+			}
+		}
+	}
+	@media (max-width: $mobileM) {
+		span,
+		&::before,
+		&::after {
+			height: rem(2);
+		}
+
+		span {
+			top: calc(50% - rem(1));
+		}
+
+		.menu-open & {
+			&::before {
+				top: calc(50% - rem(1));
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+			}
+		}
+	}
+}

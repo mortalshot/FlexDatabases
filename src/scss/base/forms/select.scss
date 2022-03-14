@@ -1,0 +1,179 @@
+// <SELECT>
+// Снипет (HTML): sel
+.select {
+	position: relative;
+
+	// .select__body
+	&__body {
+		position: relative;
+	}
+
+	// .select__title
+	&__title {
+		width: 100%;
+		padding: rem(17);
+		border-radius: rem(12);
+		background-color: $White;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(19, 16);
+		text-align: left;
+		color: $mainColor;
+		cursor: pointer;
+		border: 1px solid transparent;
+		transition: $transition ease border-color 0s;
+	}
+
+	// .select__value
+	&__value {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		> * {
+			flex: 1 1 auto;
+		}
+
+		&::after {
+			content: "\e91d";
+			@extend %ic;
+			font-size: rem(11);
+			color: $Gray;
+			transition: $transition ease transform 0s;
+		}
+
+		&._select-pseudo-label {
+			&::before {
+				content: attr(data-pseudo-label);
+				opacity: 0.5;
+			}
+		}
+	}
+
+	// .select__content
+	&__content {
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		margin-right: rem(10);
+	}
+
+	// .select__text
+	&__text {
+		flex: 1 1 auto;
+	}
+
+	// .select__input
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+
+	// .select__options
+	&__options {
+		color: $mainColor;
+		position: absolute;
+		top: rem(54);
+		border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		background-color: $White;
+		padding-left: rem(17);
+		padding-right: rem(17);
+		padding-bottom: rem(17);
+		border: 1px solid transparent;
+		border-top: 0;
+		transition: $transition ease border-color 0s;
+	}
+
+	// .select__scroll
+	&__scroll {
+		overflow-y: auto;
+		overflow-x: hidden;
+		// Максимальная высота
+		max-height: 200px;
+
+		// Стили скроллбара
+		.simplebar-scrollbar {
+			&::before {
+				//opacity: 1;
+			}
+		}
+	}
+
+	// .select__option
+	&__option {
+		width: 100%;
+		text-align: left;
+		cursor: pointer;
+		font-weight: 500;
+		font-size: rem(16);
+		line-height: math.div(19, 16);
+		color: inherit;
+		transition: $transition ease color 0s;
+
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+
+		&._select-selected {
+			background-color: #eee;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $Orange;
+			}
+		}
+	}
+
+	// Конструкция дополнительных данных
+	&__row {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__asset {
+	}
+
+	&__text {
+	}
+
+	// Состояния селекта
+	&._select-open {
+		z-index: 5;
+
+		.select__title {
+			border-radius: rem(12) rem(12) 0 0;
+			border-color: $mainColor;
+		}
+
+		.select__options {
+			border-color: $mainColor;
+		}
+
+		.select__value {
+			&::after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&._select-disabled {
+	}
+	&._select-active {
+	}
+	&._select-focus {
+	}
+	&._select-multiple {
+	}
+	&._select-checkbox {
+	}
+}
+
+// Тег
+._select-tag {
+	cursor: pointer;
+}

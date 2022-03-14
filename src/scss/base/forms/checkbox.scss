@@ -1,0 +1,59 @@
+.checkbox {
+	position: relative;
+
+	// .checkbox__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+
+		&:focus + .checkbox__label:before {
+			box-shadow: 0 0 5px $White;
+		}
+		&:checked + .checkbox__label:before {
+			background: $White;
+			color: $mainColor;
+		}
+	}
+
+	// .checkbox__label
+	&__label {
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		gap: 10px;
+
+		&:before {
+			content: "\e91c";
+			@extend %ic;
+			font-size: rem(16);
+			color: $White;
+			align-self: flex-start;
+			flex: 0 0 rem(18);
+			width: rem(18);
+			height: rem(18);
+			margin-top: rem(1);
+			border: 1px solid $White;
+			background-color: $White;
+			border-radius: rem(4);
+			transition: $transition ease color 0s;
+		}
+	}
+
+	// .checkbox__text
+	&__text {
+		a {
+			text-decoration: underline $White from-font;
+			text-underline-offset: 3px;
+			transition: $transition ease text-decoration 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline transparent from-font;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+//<FORM>
+// Снипет (HTML):
+.form {
+	// .form__row
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiveValue("margin-left", -16, -5);
+		@include adaptiveValue("margin-right", -16, -5);
+	}
+
+	// .form__item
+	&__item {
+		width: 100%;
+		margin-bottom: rem(20);
+		@include adaptiveValue("padding-left", 16, 5);
+		@include adaptiveValue("padding-right", 16, 5);
+	}
+
+	// .form__input
+	&__input {
+	}
+
+	// .form__submit
+	&__submit {
+	}
+
+	// .form__privacy
+	&__privacy {
+		font-size: rem(14);
+		line-height: math.div(21, 14);
+	}
+
+	// .form__btn
+	&__btn {
+	}
+}
+
+//</FORM>
+
+// <BUTTONS>
+// Снипет (HTML): btn
+// @import "button";
+
+// <INPUTS>
+// Снипет (HTML): inp
+@import "input";
+
+// <CHECK>
+// Снипет (HTML): chk
+@import "checkbox";
+
+// <RADIO>
+// Снипет (HTML): opt
+// @import "radio";
+
+// <SELECT>
+// Снипет (HTML): sel
+@import "select";
+
+// <RATING>
+// Снипет (HTML): rating
+// @import "rating";
+
+// <QUANTITY>
+// Снипет (HTML): qa
+// @import "quantity";
+
+// <RANGE>
+// Снипет (HTML):
+// @import "range";
