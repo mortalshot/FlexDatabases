@@ -688,7 +688,7 @@
 //features ====================================================================================================
 .features {
     @include adaptiveValue("padding-bottom", 87, 50);
-    background: #f0f5fa;
+    background: $LGBlue;
 
     &:not(:first-child) {
         @include adaptiveValue("padding-top", 87, 50);

@@ -86,3 +86,7 @@
 .swiper-centered > .swiper-wrapper > .swiper-slide {
 	scroll-snap-align: center center;
 }
+
+.swiper-pagination-lock {
+	display: none;
+}

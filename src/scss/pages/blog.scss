@@ -1,0 +1,241 @@
+//archive-blog ====================================================================================================
+.blog {
+    // .blog__container
+    &__container {
+    }
+
+    // .blog__heading
+    &__heading {
+        display: grid;
+        row-gap: rem(30);
+        max-width: rem(921);
+        margin-left: auto;
+        margin-right: auto;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 75, 40);
+        }
+    }
+
+    // .blog__title
+    &__title {
+        text-align: center;
+
+        strong {
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    // .blog__categories
+    &__categories {
+    }
+
+    // .blog__articles
+    &__articles {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(rem(280), 1fr));
+        @include adaptiveValue("row-gap", 50, 24, 1440, 768, 1);
+        @include adaptiveValue("column-gap", 48, 16, 1440, 768, 1);
+    }
+
+    // .blog__article
+    &__article {
+    }
+
+    // .blog__load-more
+    &__load-more {
+        &:not(:first-child) {
+            margin-top: rem(50);
+        }
+
+        .btn {
+            padding: rem(11) rem(18);
+            width: 100%;
+            border-color: $Gray;
+            color: $mainColor;
+            flex-direction: row-reverse;
+            position: relative;
+            transition: $transition ease all 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    border-color: $Orange;
+                    color: $Orange;
+
+                    &::before {
+                        color: $Orange;
+                    }
+                }
+            }
+
+            &::before {
+                margin-left: rem(4);
+                font-size: rem(12);
+                color: $Gray;
+                transition: $transition ease color 0s;
+            }
+        }
+    }
+}
+
+.blog-categories {
+    // .blog-categories__list
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: rem(-8);
+    }
+
+    // .blog-categories__item
+    &__item {
+        padding: rem(8);
+
+        a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $Gray;
+            border-radius: rem(12);
+            padding: rem(10.5) rem(16);
+            font-weight: 500;
+            @include adaptiveValue("font-size", 16, 14);
+            line-height: math.div(19, 16);
+            text-transform: capitalize;
+            text-align: center;
+            transition: $transition ease all 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $Orange;
+                    border-color: $Orange;
+                }
+            }
+        }
+
+        // .blog-categories__item_active
+        &_active {
+            a {
+                border: rem(3) solid $Orange;
+            }
+        }
+    }
+}
+
+//mailing ====================================================================================================
+.mailing {
+    &:not(:first-child) {
+        padding-top: 0;
+    }
+
+    // .mailing__container
+    &__container {
+    }
+
+    // .mailing__wrapper
+    &__wrapper {
+        background: $LGBlue;
+        border-radius: rem(30);
+        @include adaptiveValue("padding-top", 76, 50, 1440, 768, 1);
+        @include adaptiveValue("padding-bottom", 76, 50, 1440, 768, 1);
+        @include adaptiveValue("padding-left", 108, 15, 1440, 768, 1);
+        @include adaptiveValue("padding-right", 108, 15, 1440, 768, 1);
+        display: grid;
+        align-items: center;
+        column-gap: rem(24);
+        row-gap: rem(40);
+
+        @media (min-width: $mobile) {
+            grid-template-columns: 1fr percent(492, 1032);
+        }
+        @media (max-width: $mobileSmall) {
+            margin-left: rem(-15);
+            margin-right: rem(-15);
+            border-radius: 0;
+        }
+    }
+
+    // .mailing__body
+    &__body {
+        display: grid;
+        row-gap: rem(18);
+
+        @media (min-width: $mobile) {
+            max-width: rem(378);
+        }
+    }
+
+    // .mailing__title
+    &__title {
+    }
+
+    // .mailing__subtitle
+    &__subtitle {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 28, 18);
+        line-height: math.div(39, 28);
+    }
+
+    // .mailing__form
+    &__form {
+        .form {
+            // .form__row
+            &__row {
+            }
+            // .form__item
+            &__item {
+            }
+
+            // .form__input
+            &__input {
+            }
+
+            // .form__submit
+            &__submit {
+            }
+
+            // .form__privacy
+            &__privacy {
+            }
+
+            // .form__btn
+            &__btn {
+                width: 100%;
+                border-width: rem(1);
+                border-color: $mainColor;
+                color: $mainColor;
+                padding: rem(17);
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        border-color: $Orange;
+                        color: $Orange;
+                    }
+                }
+
+                &:not(:first-child) {
+                    margin-top: rem(20);
+                }
+            }
+        }
+
+        .checkbox {
+            // .checkbox__input
+            &__input {
+            }
+            // .checkbox__label
+            &__label {
+                &::before {
+                    font-size: rem(14);
+                    border: 2px solid $mainColor;
+                }
+            }
+            // .checkbox__text
+            &__text {
+            }
+        }
+    }
+}

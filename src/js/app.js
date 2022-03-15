@@ -27,8 +27,27 @@ import * as flsFunctions from "./files/functions.js";
 flsFunctions.isWebp();
 /* Добавление класса touch для HTML если браузер мобильный */
 // flsFunctions.addTouchClass();
+
+// Добавление отступа к оболочке из-за фиксированной шапки
+const header = document.querySelector('header.header');
+const wrapper = document.querySelector('.wrapper');
+
+function setMainPaddingTop() {
+    const headerHeight = header.offsetHeight;
+
+    wrapper.style.paddingTop = headerHeight + 'px';
+}
+
+setTimeout(() => {
+    setMainPaddingTop();
+}, 400);
+
+window.addEventListener('resize', function (event) {
+    setMainPaddingTop()
+}, true);
+
 /* Добавление loaded для HTML после полной загрузки страницы */
-// flsFunctions.addLoadedClass();
+flsFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
 flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
@@ -53,7 +72,7 @@ flsFunctions.tabs();
 Документация: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /*
 Попапы

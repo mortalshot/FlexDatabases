@@ -23,6 +23,10 @@ $White: #fff;
 $Orange: #f07d00;
 $Gray: #b9bdc6;
 $DGray: #373737;
+$LGBlue: #f0f5fa;
+
+$shadow-hover: 0px rem(13) rem(64) rgba(0, 0, 0, 0.11);
+$shadow: 0px rem(5) rem(14) rgba(0, 0, 0, 0.1);
 
 $transition: 0.3s;
 
@@ -61,8 +65,12 @@ body {
 		overflow: hidden;
 		touch-action: none;
 	}
+
 	// Сайт загружен
 	.loaded & {
+		.wrapper {
+			opacity: 1;
+		}
 	}
 }
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
@@ -71,6 +79,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	opacity: 0;
+	transition: 0.8s ease opacity 0s;
+
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
@@ -137,4 +148,6 @@ body {
 @import "footer";
 
 // Подключение стилей отдельных страниц
-@import "home";
+@import "pages/home";
+@import "pages/product";
+@import "pages/blog";

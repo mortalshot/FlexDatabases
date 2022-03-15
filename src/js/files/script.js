@@ -4,24 +4,6 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 window.onload = function () {
-    const header = document.querySelector('header.header');
-    const wrapper = document.querySelector('.wrapper');
-
-    // Добавление отступа к оболочке из-за фиксированной шапки
-    function setMainPaddingTop() {
-        const headerHeight = header.offsetHeight;
-
-        wrapper.style.paddingTop = headerHeight + 'px';
-    }
-
-    setTimeout(() => {
-        setMainPaddingTop();
-    }, 400);
-
-    window.addEventListener('resize', function (event) {
-        setMainPaddingTop()
-    }, true);
-
     // Изменения объектов при клике
     document.addEventListener("click", documentActions);
     function documentActions(e) {

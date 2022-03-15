@@ -1,7 +1,9 @@
 [data-showmore] {
 }
+
 [data-showmore-content] {
 }
+
 [data-showmore-button] {
 	span {
 		&:last-child {
@@ -9,6 +11,7 @@
 		}
 		._showmore-active & {
 			display: none;
+
 			&:last-child {
 				display: block;
 			}
