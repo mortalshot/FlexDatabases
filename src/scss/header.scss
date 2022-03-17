@@ -256,17 +256,19 @@
 		@media (max-width: $tablet) {
 			justify-content: center;
 
-			a,
-			button {
+			.btn {
 				@include adaptiveValue("min-width", 384, 280);
 				@include adaptiveValue("font-size", 18, 16);
 			}
 		}
 		@media (max-width: $mobileM) {
-			a,
-			button {
+			.btn {
 				width: 100%;
 			}
+		}
+
+		.btn {
+			padding: rem(12) rem(18);
 		}
 	}
 
@@ -285,6 +287,10 @@
 				}
 			}
 		}
+	}
+
+	.single-news & {
+		background: $LGBlue;
 	}
 }
 

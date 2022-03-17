@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Article"
+})
+
+<body class="single-news">
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="blog-single">
+                <div class="blog-single__container">
+                    <div class="blog-single__body">
+                        <div class="blog-single__breadcrumbs breadcrumbs">
+                            <div class="breadcrumbs__wrapper" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                                <span class="breadcrumbs__link" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                    <a href="home.html" itemprop="item">
+                                        <span itemprop="name">Blog</span>
+                                    </a>
+                                </span>
+                                <span class="breadcrumbs__separator">/</span>
+                                <span class="breadcrumbs__title">CTMS</span>
+                            </div>
+                        </div>
+
+                        <h1 class="blog-single__title">ABX-CRO selected Flex Databases CTMS and eTMF to further increase quality of clinical trial management</h1>
+
+                        <div class="blog-single__meta">
+                            <span>Jun 30, 2021</span>
+                            <span>4 min read</span>
+                        </div>
+                    </div>
+                    <div class="blog-single__preview"><img src="img/blog/blog-2-1.png" alt="" loading="lazy"></div>
+                </div>
+            </section>
+
+            <section class="blog-content">
+                <div class="blog-content__container">
+                    <div class="blog-content__body _content">
+                        <p><strong>Recently, we discussed questions <a href="">that might arise when changing your eClinical software provider</a>. Today, we want to take a closer look at one of the most asked questions:</strong></p>
+
+                        <br>
+
+                        <h2>“ – How can I migrate data from a legacy CTMS or eTMF? “</h2>
+
+                        <br>
+
+                        <p>Data migration is a delicate process with many moving parts. Without a well-established process, the CTMS go-live could be postponed, with your new provider wasting resources on getting your historical data into their database in the meantime.</p>
+
+                        <p>Let’s talk about how Flex Databases manages the data migration process and share best practices based on our experience.</p>
+
+                        <h3>Below is the typical data migration flow implemented at Flex Databases:</h3>
+
+                        <img src="img/blog/blog-2-2.jpg" alt="" loading="lazy">
+
+                        <p></p>
+
+                        <p><strong>Let’s look at each step in more detail:</strong></p>
+
+                        <h2 id="heading-1">Step 1: As-is data audit</h2>
+                        <p>Historical data is carefully scoped and scrutinized on its structure, links, and accuracy. We always involve all stakeholders and ask them to verify their own data before the audit.
+                        </p>
+
+                        <h3>Before the audit begins, the following questions must be answered:</h3>
+
+                        <ul>
+                            <li>How can data be extracted from a legacy system?</li>
+                            <li>Will this data be raw extracts and, if so, in which formats?</li>
+                            <li>Does the system have an API?</li>
+                        </ul>
+
+                        <br>
+
+                        <h2 id="heading-2">Step 2: Source data preparation</h2>
+
+                        <h3>Once we determine the scope of work and initial data structure, we identify the following field-level obstacles:</h3>
+
+                        <ul>
+                            <li>Potentially missing links, blanks, and extra spaces</li>
+                            <li>Whether to convert data fields before uploading them (e.g. dates, which can vary across databases)</li>
+                            <li>Validation and business rules in the legacy system that should be reused in the new database</li>
+                        </ul>
+
+                        <p>Sometimes, a lack of data governance rules in the legacy system results in frustration during the data migration.</p>
+
+                        <h3>Here is an example from our practice:</h3>
+
+                        <blockquote class="wp-block-quote">
+                            <p>There are cases where a single data point would be the same across databases, but each entry would be inconsistent in terms of spelling. For example, in three databases a data point was marked as “screen-failed”, “screen failed”, and “screening failure”. Thanks to our analytical tools, we managed to triage and consolidate all siloed values, creating well-organized data.</p>
+                        </blockquote>
+
+                        <h3>Another point of frustration is poor data normalization. Here’s an example:</h3>
+
+                        <blockquote class="wp-block-quote">
+                            <p>A key entity (e.g. ‘investigators’) would sometimes be loosely connected to other objects (e.g. ‘sites’ or ‘institutions’). This resulted in discrepancies across objects (e.g. the same person would attributed to multiple sites as a site team member but have different names: John Doe vs. Jonathan Doe)</p>
+                        </blockquote>
+
+                        <p>Identifying missing links in a legacy system at the early stage is a difficult task, but not impossible. With the help of automated data, the target system does not inherit weaknesses from the source system.</p>
+
+                        <br>
+
+                        <h2 id="heading-3">Step 3: Migration strategy</h2>
+
+                        <p>Using the results of data audit and preparation, and taking into account business expectations, we define a strategy for data migration and acceptance criteria.</p>
+
+                        <h3>We offer two options:</h3>
+
+                        <figure class="wp-block-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Geographic databases</th>
+                                        <th>Iterative transfer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>The full data transfer is completed within the pre-agreed time frame while systems are in downtime.</td>
+                                        <td>Continuous migration while both the source and target systems are running.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+
+                        <ol>
+                            <li>Given that most complexities are identified during the preparation stage, we can mitigate risks and avoid unexpected issues accordingly while keeping the project within the agreed budget and schedule.</li>
+                            <li>We put a lot of focus on crafting the risk management policy, an essential part of any migration plan that aims to outline the issues that could happen at any stage and how they can affect expectations.</li>
+                            <li>Once selected, the data migration plan, including timelines, tasks, and responsible managers, is communicated to all stakeholders for transparency.</li>
+                        </ol>
+
+                        <br>
+
+                        <h2 id="heading-4">Step 4: Set up and testing</h2>
+
+                        <p>After the migration plan and strategy are set, we identify and allocate the tools and resources needed to implement each step. </p>
+
+                        <h3>Core tools that we utilize belong to the following classes:</h3>
+
+                        <ul>
+                            <li><strong>ETL (Extract, Transform, Load)</strong></li>
+                            <li><strong>SQL migration services</strong></li>
+                            <li><strong>Migration workbench</strong></li>
+                        </ul>
+
+                        <p>The choice of tool depends on the complexity of the migration project and processes involved. Although the old and new systems belong to the same family (CTMS), the same feature/object can vary across different CTMS.</p>
+
+                        <p>This concerns not only the data transfer but the data transformation and remodeling process. As such, the migration tool should also support these additional activities.</p>
+
+                        <p>As a rule of thumb, each phase of the migration plan should be covered by tests, both automated and manual.</p>
+
+                        <h3>Test scripting usually involves the following aspects:</h3>
+
+                        <ul>
+                            <li>The test objective itself</li>
+                            <li>The time frame of the test</li>
+                            <li>The scope of data involved (single record, data subset, full dataset, etc.)</li>
+                            <li>The mock data or live data used</li>
+                            <li>Parameters for evaluating and communicating the test results</li>
+                        </ul>
+
+                        <br>
+
+                        <h2 id="heading-5">Step 5: Data transfer</h2>
+
+                        <p>Once the internal validation and testing is completed and all discrepancies resolved, we execute the live data transfer.</p>
+
+                        <blockquote class="wp-block-quote">
+                            <p>We ensure that all stakeholders are informed in advanced so that can plan their schedules and activities accordingly.</p>
+                        </blockquote>
+
+                        <h2 id="heading-6">Step 6: Post-migration data audit</h2>
+
+                        <p>We continue to test even after the data transfer is done. The final data audit aims to ensure the completeness and accuracy of the migration and, eventually, showcase the success of the overall project.</p>
+
+                        <blockquote class="wp-block-quote">
+                            <p>Our approach is usually to build a final reconciliation report showing the total number of objects transferred; actual number of records transferred versus those initially targeted; and discovered inconsistencies and how they have been processed.</p>
+                        </blockquote>
+
+                        <hr class="wp-block-separator">
+
+                        <h3>Flex Databases offers full data migration in 5 weeks.</h3>
+
+                        <h3>Learn more about Flex Databases CTMS and eTMF or request a free demo → <a href="mailto:bd@flexdatabases.com">bd@flexdatabases.com</a></h3>
+
+                        <a href=""><img src="img/blog/blog-2-3.jpg" alt="" loading="lazy"></a>
+                    </div>
+                    <aside class="blog-content__sidebar">
+                        <div class="article-contents">
+                            <div class="article-contents__caption">Table of content</div>
+
+                            <ul class="article-contents__list">
+                            </ul>
+                        </div>
+
+                        <div class="article-banner" data-da=".blog-content__body, 767.98, last">
+                            <a href="" class="article-banner__link" target="_blank">
+                                <img src="img/blog/blog-2-4.jpg" alt="" loading="lazy">
+
+                                <div class="article-banner__btn">
+                                    <button type="button" class="btn btn_border">Download <span>PDF</span></button>
+                                </div>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            @@include('html/widget-blog.htm',{
+            "title":"More about eTMF",
+            "class":""
+            })
+
+            @@include('html/contact-us.htm',{})
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

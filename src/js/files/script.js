@@ -49,4 +49,33 @@ window.onload = function () {
             videoPlace.prepend(videoDiv);
         }
     });
+
+    // Создаем навигационное меню на странице блога
+    const blogContent = document.querySelector('.blog-content');
+    if (blogContent) {
+        const titles = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        const articleContents = document.querySelector('.article-contents__list');
+
+        if (titles.length > 0) {
+            let headingLength = 0;
+            titles.forEach(title => {
+                const titleID = title.id;
+
+                if (titleID) {
+                    const titleText = title.textContent;
+
+                    const newItem = document.createElement('li');
+                    newItem.innerHTML = `<a href="" data-goto="#${titleID}" data-goto-header>${titleText}</a>`;
+
+                    articleContents.append(newItem);
+
+                    headingLength++;
+                }
+            });
+
+            if (headingLength <= 0) {
+                document.querySelector('.article-contents').style.display = "none";
+            }
+        }
+    }
 }
