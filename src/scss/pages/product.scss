@@ -412,6 +412,9 @@
     &:not(:first-child) {
         @include adaptiveValue("padding-top", 88, 50);
     }
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     // .another-products__container
     &__container {
@@ -430,11 +433,11 @@
         @include adaptiveValue("column-gap", 48, 16, 1440, 992, 1);
         @include adaptiveValue("row-gap", 32, 24, 1440, 992, 1);
 
-        @media (min-width: $tablet) {
-            grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-        }
         @media (min-width: $mobileSmall) {
             grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: $tablet) {
+            grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
         }
     }
 
@@ -450,7 +453,7 @@
 
         @media (any-hover: hover) {
             &:hover {
-                box-shadow: $shadow-hover;
+                box-shadow: $shadow2;
             }
         }
     }

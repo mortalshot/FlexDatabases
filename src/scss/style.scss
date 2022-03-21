@@ -25,7 +25,7 @@ $Gray: #b9bdc6;
 $DGray: #373737;
 $LGBlue: #f0f5fa;
 
-$shadow-hover: 0px rem(13) rem(64) rgba(0, 0, 0, 0.11);
+$shadow2: 0px rem(13) rem(64) rgba(0, 0, 0, 0.11);
 $shadow: 0px rem(5) rem(14) rgba(0, 0, 0, 0.1);
 
 $scrollTrack: #12202b;
@@ -154,3 +154,4 @@ body {
 @import "pages/home";
 @import "pages/product";
 @import "pages/blog";
+@import "pages/templates";

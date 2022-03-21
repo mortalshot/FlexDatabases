@@ -15,6 +15,11 @@ h {
         @include adaptiveValue("font-size", 30, 18);
         line-height: math.div(36, 30);
     }
+    &4 {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 20, 15);
+        line-height: math.div(28, 20);
+    }
 
     &1,
     &2,
@@ -131,10 +136,19 @@ video {
 }
 
 ._content {
+    @include adaptiveValue("font-size", 18, 14);
     line-height: math.div(24, 16);
 
+    h1,
+    h2,
+    h3,
+    h4 {
+        &:not(:last-child) {
+            margin-bottom: rem(24);
+        }
+    }
+
     p {
-        @include adaptiveValue("font-size", 18, 14);
         line-height: math.div(25, 18);
         margin: rem(16) 0;
     }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Our clients"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="company company_clients">
+				<div class="company__container">
+					<div class="company__body _content">
+						<h2>We are in a great company of life <strong>science innovators</strong></h2>
+                        <h4>The best of CROs, Pharma, and Biotech.</h4>
+					</div>
+					<div class="company__img"><img src="img/pages/our-clients-1.png" alt="" loading="lazy"></div>
+				</div>
+
+				<div class="company__text">
+					<div class="company__container">
+						<div class="_content">
+							<h2>Our mission is to be the best unified yet flexible e-Clinical platform reflected in success <br> of our clients and employees.</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+
+            @@include('html/partners.htm',{})
+
+            @@include('html/reviews.htm',{})
+
+            @@include('html/widget-blog.htm',{
+            "title":"Clients",
+            "class":"widget-clients"
+            })
+
+            @@include('html/contact-us.htm',{})
+
+            <section class="another-products">
+                <div class="another-products__container">
+                    <h2 class="another-products__title">Our products</h2>
+
+                    <div class="another-products__cards">
+                        <a href="" class="another-products__card">
+                            <h3 class="another-products__card-title">Electronic Trial Master File</h3>
+                            <div class="another-products__card-text">Complete 24/7 visibility into all your trial documentation.</div>
+                        </a>
+                        <a href="" class="another-products__card">
+                            <h3 class="another-products__card-title">Project Management &&nbsp;Budgeting</h3>
+                            <div class="another-products__card-text">A single Command & Control center of your tasks.</div>
+                        </a>
+                        <a href="" class="another-products__card">
+                            <h3 class="another-products__card-title">Pharma<wbr>covigilance</h3>
+                            <div class="another-products__card-text">Your comprehensive drug safety database</div>
+                        </a>
+                        <a href="" class="another-products__card">
+                            <h3 class="another-products__card-title">LMS&QMS</h3>
+                            <div class="another-products__card-text">Personnel qualification level</div>
+                        </a>
+                        <a href="" class="another-products__card">
+                            <h3 class="another-products__card-title">Clinical Trial Management System</h3>
+                            <div class="another-products__card-text">Monitoring, subjects and sites activities</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

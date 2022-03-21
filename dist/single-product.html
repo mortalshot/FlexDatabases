@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220317182429">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220321170042">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,13 +59,13 @@
 									<button data-spoller type="button" class="menu__arrow _icon-chevron" tabindex="-1"></button>
 
 									<ul class="menu__sub-list">
-										<li class="menu__sub-item"><a href="" class="menu__sub-link">Company</a></li>
-										<li class="menu__sub-item"><a href="" class="menu__sub-link">Our clients</a></li>
+										<li class="menu__sub-item"><a href="company.html" class="menu__sub-link">Company</a></li>
+										<li class="menu__sub-item"><a href="our-clients.html" class="menu__sub-link">Our clients</a></li>
 										<li class="menu__sub-item"><a href="" class="menu__sub-link">Why clients choose us</a></li>
 									</ul>
 								</li>
 								<li class="menu__item">
-									<a href="" class="menu__link">Contacts</a>
+									<a href="contacts.html" class="menu__link">Contacts</a>
 								</li>
 							</ul>
 						</nav>
@@ -791,11 +791,11 @@
 
 								<ul class="menu__list">
 									<li class="menu__item"><a href="" class="menu__link">About us</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Our clients</a></li>
+									<li class="menu__item"><a href="our-clients.html" class="menu__link">Our clients</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Implementation</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Pricing</a></li>
 									<li class="menu__item"><a href="archive-blog.html" class="menu__link">Blog</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Contacts</a></li>
+									<li class="menu__item"><a href="contacts.html" class="menu__link">Contacts</a></li>
 								</ul>
 							</nav>
 							<nav class="menu">
@@ -928,7 +928,19 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220317182429"></script>
+
+	<div id="thanks" aria-hidden="true" class="popup thanks">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close _icon-close"></button>
+				<div class="popup__text _content">
+					<h2>Thank you for your interest.</h2>
+					<h3>Thank you for your interest. We are working on your request and will come back to you in the next 24 hours.</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20220321170042"></script>
 </body>
 
 </html>

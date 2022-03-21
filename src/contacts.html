@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Contacts"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="contacts">
+                <div class="contacts__container">
+                    <h1 class="contacts__title">Contacts</h1>
+
+                    <div class="contacts__items">
+                        <div class="contacts__item item-contact">
+                            <div class="item-contact__img"><img src="img/icons/europe_office.svg" alt="" loading="lazy"></div>
+                            <div class="item-contact__country">Europe</div>
+                            <div class="item-contact__address _content">
+                                <p>Flex Databases s.r.o.,</p>
+                                <p>Plynární 1617/10, Holešovice, 170 00</p>
+                                <p>Praha 7, Prague,</p>
+                                <p>Czech Republic</p>
+                            </div>
+                        </div>
+                        <div class="contacts__item item-contact">
+                            <div class="item-contact__img"><img src="img/icons/usa_office.svg" alt="" loading="lazy"></div>
+                            <div class="item-contact__country">North America</div>
+                            <div class="item-contact__address _content">
+                                <p>Flex Databases LLC,</p>
+                                <p>256 Bunn Drive, Suite 5, 08540</p>
+                                <p>Princeton, NJ, USA</p>
+                            </div>
+                            <div class="item-contact__contacts">
+                                <div class="item-contact__contact"><a href="tel:+18443351270">+1 (844) 335 12 70</a></div>
+                            </div>
+                        </div>
+                        <div class="contacts__item item-contact">
+                            <div class="item-contact__img"><img src="img/icons/swiss_office.svg" alt="" loading="lazy"></div>
+                            <div class="item-contact__country">Switzerland</div>
+                            <div class="item-contact__address _content">
+                                <p>Flex Databases Europe Ltd.,</p>
+                                <p>Voie du Chariot 3, 1003 Lausanne,</p>
+                                <p>Switzerland</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

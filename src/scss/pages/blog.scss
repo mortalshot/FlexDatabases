@@ -556,7 +556,7 @@
     @include adaptiveValue("padding-left", 40, 16);
     @include adaptiveValue("padding-right", 40, 16);
     background: $White;
-    box-shadow: $shadow-hover;
+    box-shadow: $shadow2;
     border-radius: rem(16);
     display: grid;
     gap: rem(16);

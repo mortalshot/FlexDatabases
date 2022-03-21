@@ -411,14 +411,13 @@
 		font-weight: 500;
 		font-size: rem(16);
 		line-height: math.div(19, 16);
-		display: none;
 
 		@media (min-width: $tablet) {
 			@include adaptiveValue("font-size", 16, 14, 1440, 992, 1);
 		}
 
 		&.current-language-menu-item {
-			display: block;
+			display: none;
 		}
 
 		a {
