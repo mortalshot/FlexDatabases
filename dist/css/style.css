@@ -766,6 +766,10 @@ body::after {
 .tabs__navigation {
   display: flex;
 }
+._showmore-active [data-showmore-button]::before {
+  content: "\e901";
+  font-size: 0.25rem !important;
+}
 [data-showmore-button] span:last-child {
   display: none;
 }
@@ -1225,14 +1229,15 @@ video {
   height: 0.3125rem;
 }
 ._content .wp-block-table::-webkit-scrollbar-track {
-  background-color: #12202b;
+  background-color: #b9bdc6;
   border-radius: 0.3125rem;
 }
 ._content .wp-block-table::-webkit-scrollbar-thumb {
   border-radius: 0.3125rem;
-  background-color: #b9bdc6;
+  background-color: #12202b;
 }
 ._content .wp-block-table table {
+  width: 100%;
   border-collapse: collapse;
 }
 ._content .wp-block-table table th,
@@ -3032,8 +3037,10 @@ section:not(:first-child) {
 .features__container {
   max-width: 64.5rem;
 }
-.features__title {
-  text-align: center;
+@media (min-width: 47.99875em) {
+  .features__title {
+    text-align: center;
+  }
 }
 @supports (margin-bottom: clamp( 2.5rem , 1.7066805846rem  +  3.9665970772vw , 4.875rem )) {
   .features__title:not(:last-child) {
@@ -3088,22 +3095,6 @@ section:not(:first-child) {
   .feature-item__wrapper {
     display: flex;
     align-items: flex-start;
-  }
-}
-@media (min-width: 47.99875em) {
-  .feature-item__img {
-    display: none;
-  }
-}
-@media (max-width: 47.99875em) {
-  .feature-item__img {
-    flex: 0 0 10.5rem;
-    margin-right: 1.5rem;
-  }
-}
-@media (max-width: 35.93625em) {
-  .feature-item__img {
-    flex: 0 0 28%;
   }
 }
 .feature-item__body h3 {
@@ -4455,6 +4446,9 @@ section:not(:first-child) {
     grid-template-columns: 1fr 30.608974359%;
   }
 }
+.blog-content__body {
+  display: grid;
+}
 .blog-content__body h2 {
   line-height: 1.1944444444;
   margin: 1.5rem 0;
@@ -4767,6 +4761,16 @@ section:not(:first-child) {
 @supports not (font-size: clamp( 1.125rem , 0.749217119rem  +  1.878914405vw , 2.25rem )) {
   .company__text ._content h2 {
     font-size: calc(1.125rem + 1.125 * (100vw - 20rem) / 59.875);
+  }
+}
+@supports (font-size: clamp( 0.875rem , 0.7497390397rem  +  0.6263048017vw , 1.25rem )) {
+  .company__text ._content p {
+    font-size: clamp( 0.875rem , 0.7497390397rem  +  0.6263048017vw , 1.25rem );
+  }
+}
+@supports not (font-size: clamp( 0.875rem , 0.7497390397rem  +  0.6263048017vw , 1.25rem )) {
+  .company__text ._content p {
+    font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 59.875);
   }
 }
 @media (min-width: 47.99875em) {

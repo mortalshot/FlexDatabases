@@ -236,15 +236,16 @@ video {
             height: rem(5);
         }
         &::-webkit-scrollbar-track {
-            background-color: $scrollTrack;
+            background-color: $scrollThumb;
             border-radius: rem(5);
         }
         &::-webkit-scrollbar-thumb {
             border-radius: rem(5);
-            background-color: $scrollThumb;
+            background-color: $scrollTrack;
         }
 
         table {
+            width: 100%;
             border-collapse: collapse;
 
             th,

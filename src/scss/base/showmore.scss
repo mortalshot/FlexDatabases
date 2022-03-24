@@ -5,6 +5,13 @@
 }
 
 [data-showmore-button] {
+	._showmore-active & {
+		&::before {
+			content: "\e901";
+			font-size: rem(4) !important;
+		}
+	}
+
 	span {
 		&:last-child {
 			display: none;

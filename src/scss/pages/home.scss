@@ -550,7 +550,9 @@
 
     // .features__title
     &__title {
-        text-align: center;
+        @media (min-width: $mobile) {
+            text-align: center;
+        }
 
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 78, 40);
@@ -590,20 +592,6 @@
         @media (max-width: $mobile) {
             display: flex;
             align-items: flex-start;
-        }
-    }
-
-    // .feature-item__img
-    &__img {
-        @media (min-width: $mobile) {
-            display: none;
-        }
-        @media (max-width: $mobile) {
-            flex: 0 0 rem(168);
-            margin-right: rem(24);
-        }
-        @media (max-width: $mobileM) {
-            flex: 0 0 percent(168, 600);
         }
     }
 

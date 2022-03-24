@@ -66,6 +66,10 @@
             h2 {
                 @include adaptiveValue("font-size", 36, 18);
             }
+
+            p {
+                @include adaptiveValue("font-size", 20, 14);
+            }
         }
     }
 

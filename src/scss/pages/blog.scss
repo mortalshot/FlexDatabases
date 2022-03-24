@@ -502,6 +502,8 @@
 
     // .blog-content__body
     &__body {
+        display: grid;
+        
         h2 {
             @include adaptiveValue("font-size", 36, 18);
             line-height: math.div(43, 36);
